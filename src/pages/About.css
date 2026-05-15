@@ -1,0 +1,274 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.page-header {
+  margin-bottom: 1rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+/* Core Values Grid */
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(255, 107, 149, 0.3);
+}
+
+.value-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.vision-icon { background-color: rgba(255, 107, 149, 0.1); color: #ff6b95; }
+.philosophy-icon { background-color: rgba(33, 150, 243, 0.1); color: #2196F3; }
+.identity-icon { background-color: rgba(156, 39, 176, 0.1); color: #9C27B0; }
+.uniqueness-icon { background-color: rgba(76, 175, 80, 0.1); color: #4CAF50; }
+
+.value-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* History Section */
+.history-section {
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.history-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.history-icon {
+  color: var(--primary);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px dashed var(--border);
+  margin-left: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.5rem;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  transform: translateX(-5px); /* half width + border adjustment */
+  box-shadow: 0 0 0 4px rgba(255, 107, 149, 0.2);
+}
+
+.timeline-content {
+  background-color: var(--surface);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Personnel Section */
+.personnel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section-header.center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-icon {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.personnel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.person-card {
+  background-color: var(--surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.person-card:hover {
+  transform: translateY(-8px);
+}
+
+.person-image-container {
+  width: 100%;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+
+.person-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.person-card:hover .person-image {
+  transform: scale(1.05);
+}
+
+.person-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
+
+.person-info {
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  background-color: var(--surface);
+}
+
+.person-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.person-role {
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* Video Section */
+.video-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Organization Chart Section */
+.org-chart-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.org-chart-wrapper {
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--surface);
+}
+
+.org-chart-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .history-section {
+    padding: 2rem 1.5rem;
+  }
+}

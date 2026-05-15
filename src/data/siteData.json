@@ -1,0 +1,336 @@
+{
+  "siteConfig": {
+    "title": "บันทึกการฝึกสอน",
+    "subtitle": "Portfolio of Teaching Internship",
+    "academicYear": "2568",
+    "schoolName": "วิทยาลัยอาชีวศึกษานครปฐม",
+    "shortName": "NVC",
+    "department": "เทคโนโลยีธุรกิจดิจิทัล",
+    "location": "นครปฐม",
+    "logoUrl": "https://nc.ac.th/nvc/wp-content/uploads/2021/08/logo-nvc.png",
+    "studentName": "นางสาวรุ่งนภา เอี่ยมชูกุล",
+    "role": "นักศึกษาฝึกสอน",
+    "major": "สาขาวิชาเทคโนโลยีสารสนเทศ",
+    "university": "คณะครุศาสตร์อุตสาหกรรม มจพ.",
+    "avatarUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200"
+  },
+  "home": {
+    "welcomeText": "รวบรวมข้อมูลการปฏิบัติหน้าที่ สื่อการสอน และกิจกรรมต่างๆ ระหว่างการฝึกประสบการณ์วิชาชีพครู ณ วิทยาลัยอาชีวศึกษานครปฐม",
+    "stats": [
+      {
+        "label": "ชั่วโมงสอน",
+        "value": "160",
+        "unit": "ชม.",
+        "iconName": "BookOpen"
+      },
+      {
+        "label": "กิจกรรม",
+        "value": "24",
+        "unit": "ครั้ง",
+        "iconName": "Calendar"
+      },
+      {
+        "label": "นักเรียน",
+        "value": "120",
+        "unit": "คน",
+        "iconName": "Users"
+      }
+    ],
+    "responsibilities": [
+      {
+        "id": "res-1",
+        "iconName": "UserCheck",
+        "title": "ครูที่ปรึกษา",
+        "description": "ดูแลนักศึกษาชั้นประกาศนียบัตรวิชาชีพขั้นสูง ชั้นปีที่ 1 จำนวน 16 คน",
+        "color": "#ff6b95"
+      },
+      {
+        "id": "res-2",
+        "iconName": "Flag",
+        "title": "ควบคุมการเข้าแถว",
+        "description": "กิจกรรมควบคุมการเข้าแถวหน้าเสาธงทุกเช้าที่มีการจัดการเรียนการสอน",
+        "color": "#f43f5e"
+      },
+      {
+        "id": "res-3",
+        "iconName": "Clock",
+        "title": "Homeroom",
+        "description": "พบปะนักเรียนในที่ปรึกษาทุกเช้าวันอังคารหลังเข้าแถว",
+        "color": "#e84c7b"
+      },
+      {
+        "id": "res-4",
+        "iconName": "TrendingUp",
+        "title": "โครงการยิ้มใส ไหว้สวย",
+        "description": "ปฏิบัติหน้าที่ครูเวรประจำโครงการทุกเช้า",
+        "color": "#fb7185"
+      },
+      {
+        "id": "res-5",
+        "iconName": "Monitor",
+        "title": "งานสนับสนุน IT",
+        "description": "ช่วยแก้ไขปัญหาคอมพิวเตอร์ เครื่องปริ้นเตอร์ และระบบอินเตอร์เน็ต",
+        "color": "#fda4af"
+      }
+    ]
+  },
+  "about": {
+    "title": "เกี่ยวกับสถานฝึกสอน",
+    "description": "ข้อมูลทั่วไป วิสัยทัศน์ ปรัชญา และบุคลากรของวิทยาลัยอาชีวศึกษานครปฐม",
+    "vision": "ผู้นำอาชีวะ ทักษะเลิศ เชิดชูคุณธรรม นำวิทยาลัยฯ สู่สากล",
+    "philosophy": "“การศึกษาเพื่อพัฒนาอาชีพและพัฒนาสังคม”",
+    "identity": "ทักษะวิชาชีพดี",
+    "uniqueness": "“เด่นวิชาการ ชำนาญวิชาชีพ”",
+    "videoUrl": "https://www.youtube.com/embed/3tY0orRkRpA",
+    "orgChartUrl": "https://lh3.googleusercontent.com/sitesv/AA5AbUDo5Z3R-ZVTMvdmE4QTOpES3Nq1UpKHQ4ZcKQi1mTZHdLdTJyoeYA5KVFqSnlaglR4XKroMwhOwfeZn4uQtRKeDCUhNzHXOf66BJkcbBH7DFqfDA2VSos8_4-UAcJnzPuO9HVHLLNvmhFdYfUI310HSWl_IxGWypyoROqpR3F-rZPMhU-sOe3VekBSQkxTUJGGVAWE3u9RWmmhHfwOZdD43mIOJr63Jscxi=w1280",
+    "history": [
+      {
+        "year": "2477",
+        "title": "จุดเริ่มต้น",
+        "description": "ก่อตั้งขึ้นเมื่อวันที่ 1 ธันวาคม 2477 ชื่อ “โรงเรียนวิสามัญการช่าง” โดยใช้สถานที่เรียนร่วมกับโรงเรียนสตรีฝึกหัดครูนครปฐม มีนางไปล่ สาริกบุตร เป็นผู้รักษาการครูใหญ่"
+      },
+      {
+        "year": "2481",
+        "title": "โรงเรียนการช่างสตรี",
+        "description": "เปลี่ยนชื่อเป็น โรงเรียนการช่างสตรี"
+      },
+      {
+        "year": "2483",
+        "title": "โรงเรียนช่างเย็บเสื้อผ้า",
+        "description": "เปลี่ยนชื่อเป็น โรงเรียนช่างเย็บเสื้อผ้าและการช่างสตรี"
+      },
+      {
+        "year": "2485",
+        "title": "โรงเรียนช่างทอผ้า",
+        "description": "เปลี่ยนชื่อเป็น โรงเรียนช่างทอผ้าช่างเย็บเสื้อผ้าและการช่างสตรี"
+      },
+      {
+        "year": "2492",
+        "title": "โรงเรียนการช่างสตรี",
+        "description": "เปลี่ยนชื่อเป็น โรงเรียนการช่างสตรีนครปฐม"
+      },
+      {
+        "year": "2516",
+        "title": "โรงเรียนอาชีวศึกษา",
+        "description": "เปลี่ยนชื่อเป็น โรงเรียนอาชีวศึกษานครปฐม"
+      },
+      {
+        "year": "2519",
+        "title": "อาชีวศึกษา วิทยาเขต 2",
+        "description": "เปลี่ยนชื่อเป็น โรงเรียนอาชีวศึกษานครปฐม วิทยาเขต 2 โดยรวมกับโรงเรียนการช่างนครปฐม"
+      },
+      {
+        "year": "2520",
+        "title": "วิทยาลัยอาชีวศึกษา",
+        "description": "แยกวิทยาเขต 2 เป็น วิทยาลัยอาชีวศึกษานครปฐม"
+      },
+      {
+        "year": "2540",
+        "title": "ขยายสาขาวิชา",
+        "description": "เปิดสอน ปวช. สาขางานธุรกิจค้าปลีก Big C และในปี 2543 เปิดสาขางานธุรกิจค้าปลีก (เซเว่น)"
+      },
+      {
+        "year": "2545",
+        "title": "สถาบันการอาชีวศึกษา",
+        "description": "รวมเป็นสถาบันการอาชีวศึกษาภาคกลาง 5 และเปิดสาขาการโรงแรม"
+      },
+      {
+        "year": "2548",
+        "title": "คอมพิวเตอร์กราฟิก",
+        "description": "เปิดสอน ปวช. สาขางานคอมพิวเตอร์กราฟิก และเริ่มเปิดเทียบโอนประสบการณ์"
+      },
+      {
+        "year": "2553",
+        "title": "ทวิภาคี",
+        "description": "เปิดสอน ปวช. สาขางานอาหารและโภชนาการ (ทวิ) และสาขาคอมพิวเตอร์ธุรกิจ (ทวิภาคี)"
+      },
+      {
+        "year": "2558",
+        "title": "สถาบันการอาชีวศึกษาภาคกลาง 4",
+        "description": "จัดตั้งสถาบันการอาชีวศึกษาภาคกลาง 4 ประกอบด้วยสถานศึกษาในสังกัด 9 แห่ง"
+      },
+      {
+        "year": "2559",
+        "title": "ปริญญาตรีสายปฏิบัติการ",
+        "description": "เปิดสอนระดับปริญญาตรีสายปฏิบัติการในหลายสาขาวิชา เช่น เทคโนโลยีอาหาร, การโรงแรม, การบัญชี"
+      },
+      {
+        "year": "2560",
+        "title": "ขยายระดับปริญญาตรี",
+        "description": "เปิดสอนปริญญาตรี สาขาคอมพิวเตอร์ธุรกิจ และสาขาดิจิทัลกราฟิก"
+      },
+      {
+        "year": "2565",
+        "title": "ธุรกิจดิจิทัล",
+        "description": "เปิดสอนระดับ ปวส. สาขาธุรกิจดิจิทัล"
+      },
+      {
+        "year": "2566",
+        "title": "ปัจจุบัน",
+        "description": "เปิดสอน ปวช. สาขาวิชาการจัดสำนักงาน และ ปวส. สาขาวิชาการจัดการดูแลผู้สูงอายุ"
+      }
+    ],
+    "personnel": [
+      {
+        "id": 1,
+        "name": "นางนุจสรา โพธิ์เงิน",
+        "position": "หัวหน้าแผนกวิชาเทคโนโลยีสารสนเทศ / ครูชำนาญการ",
+        "imageUrl": "https://nc.ac.th/nvc/wp-content/uploads/2023/11/%E0%B8%99%E0%B8%B8%E0%B8%88%E0%B8%A3%E0%B8%B2.png"
+      },
+      {
+        "id": 2,
+        "name": "นางสาวนัฐภิรินทร์ พิพัตน์ภานุวิทยา",
+        "position": "ครูชำนาญการ",
+        "imageUrl": "https://nc.ac.th/nvc/wp-content/uploads/2023/03/%E0%B8%99%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%B2%E0%B8%A7%E0%B8%99%E0%B8%B1%E0%B8%90%E0%B8%A0%E0%B8%B4%E0%B8%A3%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%8C-%E0%B8%9E%E0%B8%B4%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B9%8C%E0%B8%A0%E0%B8%B2%E0%B8%99%E0%B8%B8%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2-scaled.jpg"
+      },
+      {
+        "id": 3,
+        "name": "นายชานนท์ ปฏิพิมพาคม",
+        "position": "ครูจ้างสอน",
+        "imageUrl": "https://nc.ac.th/nvc/wp-content/uploads/2024/05/%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B2%E0%B8%99%E0%B8%99%E0%B8%97%E0%B9%8C%E0%B8%9B%E0%B8%8F%E0%B8%B4%E0%B8%9E%E0%B8%B4%E0%B8%A1%E0%B8%9E%E0%B8%B2%E0%B8%84%E0%B8%A1.jpg"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "ตารางสอน",
+    "driveUrl": "https://drive.google.com/drive/folders/1A91jZVmJicm2dRavQwEI-lk5m7h9O01K?usp=sharing",
+    "term1": {
+      "semester": "ภาคเรียนที่ 1/2568",
+      "imageUrl": "https://images.unsplash.com/photo-1506784951279-d9a139a584ce?auto=format&fit=crop&q=80&w=800&h=400",
+      "courses": [
+        {
+          "id": 1,
+          "code": "30000 - 2001",
+          "name": "กิจกรรมเสริมสร้างสุจริต จิตอาสา",
+          "hours": "2",
+          "classes": "ทั้งหมด"
+        },
+        {
+          "id": 2,
+          "code": "20001 - 1005",
+          "name": "การใช้เทคโนโลยีดิจิทัลเพื่ออาชีพ",
+          "hours": "4",
+          "classes": "ปวช."
+        },
+        {
+          "id": 3,
+          "code": "21901 - 2008",
+          "name": "การออกแบบส่วนติดต่อผู้ใช้",
+          "hours": "3",
+          "classes": "ปวช."
+        }
+      ]
+    },
+    "term2": {
+      "semester": "ภาคเรียนที่ 2/2568",
+      "imageUrl": "https://nc.ac.th/nvc/wp-content/uploads/2024/05/ตารางสอน-เทอม-2.jpg",
+      "courses": [
+        {
+          "id": 1,
+          "code": "30001-2002",
+          "name": "ระบบจัดการฐานข้อมูล",
+          "hours": "3",
+          "classes": "ปวส.1/1"
+        }
+      ]
+    }
+  },
+  "lessonPlans": {
+    "title": "แผนการสอน",
+    "description": "แผนการจัดการเรียนรู้มุ่งเน้นสมรรถนะอาชีพและบูรณาการปรัชญาของเศรษฐกิจพอเพียง",
+    "term1": {
+      "semester": "ภาคเรียนที่ 1/2568",
+      "ebookUrl": "https://drive.google.com/file/d/1I3_NUAN9mTRyKd-SR0Ss2sla63kBX9ly/preview"
+    },
+    "term2": {
+      "semester": "ภาคเรียนที่ 2/2568",
+      "ebookUrl": "https://drive.google.com/file/d/1k3XLewN0QmFikuCvYt_gipGmUQwM4SvP/preview"
+    }
+  },
+  "activities": {
+    "title": "กิจกรรม",
+    "description": "ประมวลภาพกิจกรรมและการเข้าร่วมงานต่างๆ ตลอดการฝึกสอน",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=1214026689&single=true&output=csv",
+    "term1": [
+      {
+        "id": "act-1-1",
+        "title": "ปฐมนิเทศ นักเรียน นักศึกษาใหม่ ปวช.1 ปวส.1",
+        "date": "1 พฤษภาคม 2568",
+        "category": "วิชาการ",
+        "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "id": "act-1-2",
+        "title": "กิจกรรมสัปดาห์สถานศึกษาคุณธรรม (1 ทีม 1 เคส)",
+        "date": "5-6 มิถุนายน 2568",
+        "category": "คุณธรรม",
+        "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "id": "act-1-3",
+        "title": "วันต่อต้านยาเสพติดโลก",
+        "date": "26 มิถุนายน 2568",
+        "category": "รณรงค์",
+        "imageUrl": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "id": "act-1-4",
+        "title": "กิจกรรมบานบุรีเกมส์ ประจำปีการศึกษา 2568",
+        "date": "13-15 สิงหาคม 2568",
+        "category": "กีฬา",
+        "imageUrl": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "term2": [
+      {
+        "id": "act-2-1",
+        "title": "พิธีน้อมรำลึกในพระมหากรุณาธิคุณฯ (ร.9)",
+        "date": "28 ตุลาคม 2568",
+        "category": "พิธีการ",
+        "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "id": "act-2-2",
+        "title": "วันคล้ายวันก่อตั้งวิทยาลัยอาชีวศึกษานครปฐม ครบรอบ 91 ปี",
+        "date": "1 ธันวาคม 2568",
+        "category": "พิธีการ",
+        "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "id": "act-2-3",
+        "title": "กิจกรรมสัปดาห์เค้กปีใหม่ 2569",
+        "date": "24-30 ธันวาคม 2568",
+        "category": "ทักษะวิชาชีพ",
+        "imageUrl": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "id": "act-2-4",
+        "title": "กิจกรรมเทศกาลตรุษจีน ปีม้าทอง 2026",
+        "date": "13 กุมภาพันธ์ 2569",
+        "category": "วัฒนธรรม",
+        "imageUrl": "https://images.unsplash.com/photo-1563810141380-60f25268f700?auto=format&fit=crop&q=80&w=800"
+      }
+    ]
+  },
+  "teachingRecord": {
+    "title": "บันทึกการฝึกสอน",
+    "description": "บันทึกสรุปการปฏิบัติหน้าที่การสอนรายวัน รายสัปดาห์ และกิจกรรมที่ได้รับมอบหมาย",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=0&single=true&output=csv"
+  },
+  "creators": {
+    "title": "จัดทำโดย",
+    "student": {
+      "name": "นางสาวรุ่งนภา เอี่ยมชูกุล",
+      "studentId": "6702041511055",
+      "department": "ภาควิชาคอมพิวเตอร์ศึกษา",
+      "faculty": "คณะครุศาสตร์อุตสาหกรรม",
+      "major": "สาขาเทคโนโลยีคอมพิวเตอร์",
+      "university": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "campus": "วิทยาเขตกรุงเทพ",
+      "email": "s6702041511055@email.kmutnb.ac.th",
+      "github": "https://github.com/",
+      "facebook": "https://facebook.com",
+      "imageUrl": "/images/profile.png"
+    }
+  }
+}
