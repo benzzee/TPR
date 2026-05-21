@@ -11,6 +11,117 @@ export function Record() {
   const [maxWeek, setMaxWeek] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isDemoMode, setIsDemoMode] = useState(false);
+
+  // Generate realistic mock records as a robust fallback if fetching fails
+  const generateMockRecords = () => {
+    return [
+      {
+        date: '5/5/2569',
+        subject: '-',
+        detail: 'จัดเตรียมความพร้อมของห้องเรียนพร้อมทั้งตรวจสอบตารางสอน รายวิชา ของคุณครูและของนักเรียน',
+        imageId: '1IAM8k-4EkiTiytDSqoXoHfooQHkDpd6l',
+        term: '1',
+        week: 1
+      },
+      {
+        date: '6/5/2569',
+        subject: '-',
+        detail: 'ประชุมครู ครั้งที่ 3/2569 โดยได้มีการแนะนำตัวในที่ประชุม',
+        imageId: '1mQ9ekAacA3hJ81ZzXjTiXklG0w6tSPra',
+        term: '1',
+        week: 1
+      },
+      {
+        date: '7/5/2569',
+        subject: '-',
+        detail: 'Setup Switch บริเวณตึก 5 ของวิทยาลัยเพื่อเพิ่มพอร์ตการเชื่อมต่อให้เพียงพอ',
+        imageId: '1NOjgfI058TagtFZyVr17r9sjvyaiGHmc',
+        term: '1',
+        week: 1
+      },
+      {
+        date: '8/5/2569',
+        subject: '-',
+        detail: 'เข้าร่วมอบรม "หนี ซ่อน สู้" เพื่อเอาชีวิตรอดเมื่อเผชิญเหตุการณ์รุนแรง',
+        imageId: '1_7bh-XVNthmPqeJ57mR_N8dmao5nNtWJ',
+        term: '1',
+        week: 1
+      },
+      {
+        date: '11/5/2569',
+        subject: '-',
+        detail: 'เตรียมเนื้อหาการสอนในรายวิชาการใช้เทคโนโลยีดิจิทัลเพื่ออาชีพ',
+        imageId: '1mbFQqNqAvvacQXQtwCUM5NwIll7GlpWC',
+        term: '1',
+        week: 2
+      },
+      {
+        date: '12/5/2569',
+        subject: '-',
+        detail: 'จัดเตรียมห้องเรียน ณ ห้อง 713 ได้ทำความสะอาดห้องเรียนและลง Windows ใหม่จำนวน 23 เครื่อง',
+        imageId: '1IZq-y8tc6KcDBu_LYyEFvqXn-Dvc44rn',
+        term: '1',
+        week: 2
+      },
+      {
+        date: '13/5/2569',
+        subject: '-',
+        detail: 'วันหยุดราชการเนื่องจาก "วันพืชมงคล"',
+        imageId: '1obuSKK9xJ864-cCkRLSNvcmH1grKhN61',
+        term: '1',
+        week: 2
+      },
+      {
+        date: '14/5/2569',
+        subject: '-',
+        detail: 'ปฐมนิเทศนักศึกษาใหม่ ในระดับชั้น ปวช.1และ ปวส.1',
+        imageId: '195ZaUQ1Sq-gt6NrMOO0zGOVqdyVnbqiO',
+        term: '1',
+        week: 2
+      },
+      {
+        date: '15/5/2569',
+        subject: '-',
+        detail: 'จัดเตรียมห้องเรียน ณ ห้อง 132 ได้มีการลง Windows ใหม่ จำนวน 20 เครื่อง',
+        imageId: '1Qbgja5iciYRG07XyLsTRhvyAwtW8JKcR',
+        term: '1',
+        week: 2
+      },
+      {
+        date: '18/5/2569',
+        subject: '-',
+        detail: 'ดูแลนักเรียน ในรายวิชากิจกรรมเสริมสร้างสุจริต จิตอาสา ให้นักเรียนสมัครเข้าชมรมวิชาชีพ',
+        imageId: '1WbpzKroBPZl3f1hqodHyXJeLqMjgQayP',
+        term: '1',
+        week: 3
+      },
+      {
+        date: '19/5/2569',
+        subject: '-',
+        detail: 'ดูแลนักเรียนคาบ HomeRoom และสอนวิชาการใช้เทคโนโลยีดิจิทัลเพื่ออาชีพได้ทำการสอนหน่วยที่1 พร้อมทำแบบทดสอบในห้องเรียน',
+        imageId: '1Rym88kstrZO00sIOFjWULpN2Iyjeibyd',
+        term: '1',
+        week: 3
+      },
+      {
+        date: '20/5/2569',
+        subject: '-',
+        detail: 'สอนรายวิชาการออกแบบส่วนติดต่อผู้ใช้ สอนบทนำของรายวิชาและพานักเรียนทำกิจกรรม "Crazy 8S" เพื่อให้นักเรียนออกแบบแอปในระยะเวลา 8 นาทีพร้อมสุ่มนักเรียนนำเสนอหน้าชั้นเรียน',
+        imageId: '1XHrqJ-IOa65OBBpgngZbXrfOvzsw8cF9',
+        term: '1',
+        week: 3
+      },
+      {
+        date: '21/5/2569',
+        subject: '-',
+        detail: 'แนะนำตัวหน้าเสาธงบริเวณอาคารโดมช่วงเช้าและแก้ไขปัญหาสายแลนใช้งานไม่ได้เนื่องจากสายขาด',
+        imageId: '17S8uRh07GjxBqTK9Ksb6b3Uy99LH2gH9',
+        term: '1',
+        week: 3
+      }
+    ];
+  };
 
   const getPreviewUrl = (id) => {
     if (!id || id === '-' || id === '') return null;
@@ -70,6 +181,7 @@ export function Record() {
   const fetchData = async () => {
     setLoading(true);
     setError(null);
+    setIsDemoMode(false);
     try {
       const response = await fetch(teachingRecord.sheetUrl);
       if (!response.ok) throw new Error('Network error');
@@ -83,7 +195,16 @@ export function Record() {
       const max = data.reduce((acc, r) => Math.max(acc, r.week || 0), 1);
       setMaxWeek(max > 0 ? max : 1);
     } catch (err) {
-      setError('ไม่สามารถโหลดข้อมูลจาก Google Sheets ได้ กรุณาตรวจสอบลิงก์หรือการแชร์ชีต');
+      console.warn('Failed to fetch real sheet data, falling back to local records.', err);
+      // Load mock records so page remains beautiful and weeks menu is visible!
+      const mockRecords = generateMockRecords();
+      const termNum = activeTerm === 'term1' ? '1' : '2';
+      const data = mockRecords.filter(r => !r.term || r.term === '' || r.term === termNum);
+      setRecords(data);
+      // Set maxWeek
+      const max = data.reduce((acc, r) => Math.max(acc, r.week || 0), 1);
+      setMaxWeek(max > 0 ? max : 1);
+      setIsDemoMode(true);
     } finally {
       setLoading(false);
     }
@@ -104,6 +225,17 @@ export function Record() {
         <div className="badge">บันทึกการปฏิบัติงาน</div>
         <h1 className="text-h1">{teachingRecord.title}</h1>
       </div>
+
+      {/* Demo Warning Banner */}
+      {isDemoMode && (
+        <div className="demo-banner glass-panel animate-fade-in">
+          <Info size={20} className="demo-icon" />
+          <div className="demo-message">
+            <strong>ระบบกำลังแสดงข้อมูลจำลอง (Demo)</strong> เนื่องจากไม่สามารถดึงข้อมูลจริงจาก Google Sheets ได้ 
+            กรุณาตรวจสอบการเชื่อมต่ออินเทอร์เน็ต หรือสถานะการแชร์ของชีตนี้
+          </div>
+        </div>
+      )}
 
       {/* Term Selection */}
       <div className="record-top-bar">

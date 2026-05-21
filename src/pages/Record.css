@@ -50,6 +50,32 @@
   font-weight: 600;
 }
 
+/* Demo Banner */
+.demo-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.5rem;
+  background: rgba(254, 243, 199, 0.7);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  border-radius: var(--radius-lg);
+  color: #92400e;
+  font-size: 0.925rem;
+}
+
+.demo-icon {
+  color: #d97706;
+  flex-shrink: 0;
+}
+
+.demo-message code {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #b45309;
+}
+
 .term-tabs {
   display: flex;
   gap: 0.5rem;

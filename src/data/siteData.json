@@ -250,72 +250,26 @@
   "activities": {
     "title": "กิจกรรม",
     "description": "ประมวลภาพกิจกรรมและการเข้าร่วมงานต่างๆ ตลอดการฝึกสอน",
-    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=1214026689&single=true&output=csv",
-    "term1": [
-      {
-        "id": "act-1-1",
-        "title": "ปฐมนิเทศ นักเรียน นักศึกษาใหม่ ปวช.1 ปวส.1",
-        "date": "1 พฤษภาคม 2568",
-        "category": "วิชาการ",
-        "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        "id": "act-1-2",
-        "title": "กิจกรรมสัปดาห์สถานศึกษาคุณธรรม (1 ทีม 1 เคส)",
-        "date": "5-6 มิถุนายน 2568",
-        "category": "คุณธรรม",
-        "imageUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        "id": "act-1-3",
-        "title": "วันต่อต้านยาเสพติดโลก",
-        "date": "26 มิถุนายน 2568",
-        "category": "รณรงค์",
-        "imageUrl": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        "id": "act-1-4",
-        "title": "กิจกรรมบานบุรีเกมส์ ประจำปีการศึกษา 2568",
-        "date": "13-15 สิงหาคม 2568",
-        "category": "กีฬา",
-        "imageUrl": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800"
-      }
-    ],
-    "term2": [
-      {
-        "id": "act-2-1",
-        "title": "พิธีน้อมรำลึกในพระมหากรุณาธิคุณฯ (ร.9)",
-        "date": "28 ตุลาคม 2568",
-        "category": "พิธีการ",
-        "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        "id": "act-2-2",
-        "title": "วันคล้ายวันก่อตั้งวิทยาลัยอาชีวศึกษานครปฐม ครบรอบ 91 ปี",
-        "date": "1 ธันวาคม 2568",
-        "category": "พิธีการ",
-        "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        "id": "act-2-3",
-        "title": "กิจกรรมสัปดาห์เค้กปีใหม่ 2569",
-        "date": "24-30 ธันวาคม 2568",
-        "category": "ทักษะวิชาชีพ",
-        "imageUrl": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800"
-      },
-      {
-        "id": "act-2-4",
-        "title": "กิจกรรมเทศกาลตรุษจีน ปีม้าทอง 2026",
-        "date": "13 กุมภาพันธ์ 2569",
-        "category": "วัฒนธรรม",
-        "imageUrl": "https://images.unsplash.com/photo-1563810141380-60f25268f700?auto=format&fit=crop&q=80&w=800"
-      }
-    ]
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=1214026689&single=true&output=csv"
   },
   "teachingRecord": {
     "title": "บันทึกการฝึกสอน",
     "description": "บันทึกสรุปการปฏิบัติหน้าที่การสอนรายวัน รายสัปดาห์ และกิจกรรมที่ได้รับมอบหมาย",
     "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=0&single=true&output=csv"
+  },
+  "attendance": {
+    "title": "บันทึกการเข้าออกงาน",
+    "description": "บันทึกการลงเวลาเข้า-ออกงานปฏิบัติหน้าที่ฝึกประสบการณ์วิชาชีพครูในแต่ละวัน",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=1541891668&single=true&output=csv",
+    "driveUrl": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing",
+    "monthlyDriveUrls": {
+      "พฤษภาคม": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing",
+      "มิถุนายน": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing",
+      "กรกฎาคม": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing",
+      "สิงหาคม": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing",
+      "กันยายน": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing",
+      "ตุลาคม": "https://drive.google.com/drive/folders/14sUub8Kx2Ut7ngTnYSoVxEMQgSsT5cUF?usp=sharing"
+    }
   },
   "creators": {
     "title": "จัดทำโดย",

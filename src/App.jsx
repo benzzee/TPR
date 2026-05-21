@@ -3,6 +3,7 @@ import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Schedule } from './pages/Schedule';
+import { Attendance } from './pages/Attendance';
 import { LessonPlans } from './pages/LessonPlans';
 import { Activities } from './pages/Activities';
 import { Creators } from './pages/Creators';
@@ -17,6 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="schedule" element={<Schedule />} />
+          <Route path="attendance" element={<Attendance />} />
           <Route path="lesson-plans" element={<LessonPlans />} />
           <Route path="activities" element={<Activities />} />
           <Route path="evaluation" element={<Placeholder title="แบบการประเมินฝึกสอน" />} />

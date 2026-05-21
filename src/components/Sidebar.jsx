@@ -9,7 +9,8 @@ import {
   PenTool, 
   FileText, 
   Users,
-  GraduationCap
+  GraduationCap,
+  Clock
 } from 'lucide-react';
 import siteData from '../data/siteData.json';
 import './Sidebar.css';
@@ -21,6 +22,7 @@ const menuItems = [
   { path: '/lesson-plans', name: 'แผนการสอน', icon: BookOpen },
   { path: '/activities', name: 'กิจกรรม', icon: Activity },
   { path: '/evaluation', name: 'แบบการประเมินฝึกสอน', icon: CheckSquare },
+  { path: '/attendance', name: 'บันทึกการเข้าออกงาน', icon: Clock },
   { path: '/record', name: 'บันทึกการฝึกสอน', icon: PenTool },
   { path: '/research', name: 'วิจัยในชั้นเรียน', icon: FileText },
   { path: '/creators', name: 'จัดทำโดย', icon: Users },
