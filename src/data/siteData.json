@@ -2,7 +2,7 @@
   "siteConfig": {
     "title": "บันทึกการฝึกสอน",
     "subtitle": "Portfolio of Teaching Internship",
-    "academicYear": "2568",
+    "academicYear": "2569",
     "schoolName": "วิทยาลัยอาชีวศึกษานครปฐม",
     "shortName": "NVC",
     "department": "เทคโนโลยีธุรกิจดิจิทัล",
@@ -41,7 +41,7 @@
         "id": "res-1",
         "iconName": "UserCheck",
         "title": "ครูที่ปรึกษา",
-        "description": "ดูแลนักศึกษาชั้นประกาศนียบัตรวิชาชีพขั้นสูง ชั้นปีที่ 1 จำนวน 16 คน",
+        "description": "ดูแลนักศึกษาชั้นประกาศนียบัตรวิชาชีพ ชั้นปีที่ 1 จำนวน 30 คน",
         "color": "#ff6b95"
       },
       {
@@ -239,18 +239,63 @@
     "title": "แผนการสอน",
     "description": "แผนการจัดการเรียนรู้มุ่งเน้นสมรรถนะอาชีพและบูรณาการปรัชญาของเศรษฐกิจพอเพียง",
     "term1": {
-      "semester": "ภาคเรียนที่ 1/2568",
+      "semester": "ภาคเรียนที่ 1/2569",
       "ebookUrl": "https://drive.google.com/file/d/1B3mzF3OPp79AK3W3nzBmTBfwprvKqt_i/preview"
     },
     "term2": {
-      "semester": "ภาคเรียนที่ 2/2568",
-      "ebookUrl": "https://drive.google.com/file/d/1k3XLewN0QmFikuCvYt_gipGmUQwM4SvP/preview"
+      "semester": "ภาคเรียนที่ 2/2569",
+      "ebookUrl": ""
     }
   },
   "activities": {
     "title": "กิจกรรม",
     "description": "ประมวลภาพกิจกรรมและการเข้าร่วมงานต่างๆ ตลอดการฝึกสอน",
     "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=1214026689&single=true&output=csv"
+  },
+  "portfolio": {
+    "title": "ผลงาน",
+    "description": "รวบรวมผลงานเด่น การประกวด สื่อการสอน และความสำเร็จตลอดการฝึกประสบการณ์วิชาชีพครู",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=2146311436&single=true&output=csv",
+    "term1": [
+      {
+        "id": "port-1",
+        "date": "15 สิงหาคม 2568",
+        "title": "สื่อการจัดการเรียนรู้นวัตกรรม E-Learning",
+        "category": "สื่อการสอน",
+        "description": "พัฒนาบทเรียนออนไลน์ในรายวิชาการใช้เทคโนโลยีดิจิทัลเพื่ออาชีพ ช่วยให้นักเรียนสามารถทบทวนบทเรียนได้ทุกที่ทุกเวลา",
+        "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800&h=450",
+        "term": "1"
+      },
+      {
+        "id": "port-2",
+        "date": "5 กันยายน 2568",
+        "title": "รางวัลนักศึกษาฝึกสอนดีเด่น (Outstanding Student Teacher)",
+        "category": "รางวัลและความภาคภูมิใจ",
+        "description": "ได้รับคัดเลือกให้เป็นนักศึกษาฝึกสอนดีเด่นประจำเดือนในด้านการจัดทำแผนการสอนและการอุทิศตนเพื่อนักเรียน",
+        "imageUrl": "https://images.unsplash.com/photo-1496469888073-80de7e9b2f53?auto=format&fit=crop&q=80&w=800&h=450",
+        "term": "1"
+      }
+    ],
+    "term2": [
+      {
+        "id": "port-3",
+        "date": "20 กุมภาพันธ์ 2569",
+        "title": "นวัตกรรมบอร์ดเกมเสริมทักษะดิจิทัล",
+        "category": "สื่อการสอน",
+        "description": "ออกแบบและพัฒนาบอร์ดเกมเสริมทักษะการคิดเชิงคำนวณและระบบฐานข้อมูล เพื่อให้นักเรียนเข้าใจกระบวนการทำงานได้รวดเร็วยิ่งขึ้น",
+        "imageUrl": "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&q=80&w=800&h=450",
+        "term": "2"
+      },
+      {
+        "id": "port-4",
+        "date": "10 มีนาคม 2569",
+        "title": "ที่ปรึกษาโครงงานนวัตกรรมดิจิทัลรางวัลรองชนะเลิศ",
+        "category": "ผลงานนักเรียน",
+        "description": "ควบคุมและดูแลโครงงานสิ่งประดิษฐ์ของนักเรียนระดับชั้น ปวช. ในหัวข้อการประยุกต์ใช้ IoT เพื่อการเกษตรในชุมชน",
+        "imageUrl": "https://images.unsplash.com/photo-1530893609608-32a9af3aa95c?auto=format&fit=crop&q=80&w=800&h=450",
+        "term": "2"
+      }
+    ]
   },
   "teachingRecord": {
     "title": "บันทึกการฝึกสอน",
