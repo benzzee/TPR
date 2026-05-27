@@ -26,7 +26,7 @@ export function Portfolio() {
     return result;
   };
 
-  // Columns: วันที่(0), ชื่อผลงาน(1), หมวดหมู่(2), รายละเอียด(3), รูปภาพ(4), เทอม(5)
+  // Columns: ชื่อกิจกรรม(0), หมวดหมู่(1), รายละเอียด(2), รูปภาพ(3), เทอม(4)
   const parseCSV = (text) => {
     const lines = text.trim().split(/\r?\n/);
     if (lines.length < 2) return [];
@@ -35,15 +35,14 @@ export function Portfolio() {
         const cols = parseCSVLine(line);
         return {
           id: `port-live-${idx}`,
-          date: cols[0] || '',
-          title: cols[1] || '',
-          category: cols[2] || 'ทั่วไป',
-          description: cols[3] || '',
-          imageId: cols[4] || '',
-          term: cols[5] || '',
+          title: cols[0] || '',
+          category: cols[1] || 'ทั่วไป',
+          description: cols[2] || '',
+          imageId: cols[3] || '',
+          term: cols[4] || '',
         };
       })
-      .filter(r => r.date.trim() !== '' && r.title.trim() !== '');
+      .filter(r => r.title.trim() !== '');
   };
 
   const getPreviewUrl = (id) => {
