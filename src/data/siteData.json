@@ -318,6 +318,33 @@
       "ธันวาคม": "https://drive.google.com/drive/folders/1ZIyzNpjukfhjLFofD6efZLThMNOgEZb7?usp=sharing"
     }
   },
+  "research": {
+    "title": "วิจัยในชั้นเรียน",
+    "description": "เอกสารการวิจัยในชั้นเรียนเพื่อพัฒนาการจัดการเรียนรู้ ประกอบด้วยเค้าโครงร่างงานวิจัย เล่มรายงานวิจัยฉบับสมบูรณ์ และสไลด์นำเสนอ",
+    "categories": {
+      "proposal": {
+        "id": "proposal",
+        "title": "เค้าโครงร่างงานวิจัย",
+        "description": "เค้าโครงร่างงานวิจัยในชั้นเรียน สำหรับการจัดทำและพัฒนาการจัดการเรียนรู้",
+        "driveUrl": "https://drive.google.com/file/d/1nlP30S4kJ_FHrdIekMgE4t9HZy6VHbAV/view?usp=sharing",
+        "previewUrl": "https://drive.google.com/file/d/1nlP30S4kJ_FHrdIekMgE4t9HZy6VHbAV/preview"
+      },
+      "fullPaper": {
+        "id": "fullPaper",
+        "title": "เล่มวิจัย",
+        "description": "รายงานผลการวิจัยในชั้นเรียนฉบับสมบูรณ์",
+        "driveUrl": "",
+        "previewUrl": ""
+      },
+      "slides": {
+        "id": "slides",
+        "title": "สไลด์เค้าโครงร่างงานวิจัย",
+        "description": "สไลด์นำเสนอเค้าโครงร่างงานวิจัยในชั้นเรียน",
+        "driveUrl": "",
+        "previewUrl": ""
+      }
+    }
+  },
   "creators": {
     "title": "จัดทำโดย",
     "student": {
