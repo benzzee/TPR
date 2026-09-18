@@ -1,6 +1,7 @@
 import { Building2, Target, Lightbulb, Fingerprint, Award, Users } from 'lucide-react';
 import './About.css';
 import siteData from '../data/siteData.json';
+import planImg from '../assets/Plan.png';
 
 export function About() {
   const { about } = siteData;
@@ -68,13 +69,17 @@ export function About() {
       )}
 
       {/* Organization Chart Section */}
-      {orgChartUrl && (
+      {(orgChartUrl || planImg) && (
         <div className="org-chart-section animate-fade-in">
           <div className="section-header">
             <h2 className="text-h2">แผนผังองค์กร</h2>
           </div>
           <div className="org-chart-wrapper glass-panel">
-            <img src={orgChartUrl} alt="แผนผังองค์กร" className="org-chart-image" />
+            <img 
+              src={orgChartUrl?.includes('Plan.png') ? planImg : (orgChartUrl || planImg)} 
+              alt="แผนผังองค์กร" 
+              className="org-chart-image" 
+            />
           </div>
         </div>
       )}
