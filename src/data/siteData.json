@@ -297,6 +297,87 @@
       }
     ]
   },
+  "studentWorks": {
+    "title": "ผลงานนักเรียน",
+    "description": "รวบรวมชิ้นงาน โครงงาน นวัตกรรม และผลงานสร้างสรรค์ของนักเรียนจากการจัดการเรียนรู้ในแต่ละภาคเรียน",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTNjJgOeMOE59YHxdci_ZrAqyFTO1V4VRqDbnB_vS4_AQ1kKHSOJJ0T3BOpkC-ZuvN1GFxbKkSJjPCF/pub?gid=314159265&single=true&output=csv",
+    "term1": [
+      {
+        "id": "sw-t1-1",
+        "date": "15 กรกฎาคม 2569",
+        "title": "การออกแบบสื่อสิ่งพิมพ์ดิจิทัลและแบรนด์สินค้า",
+        "studentName": "นายธนกฤต สุขเจริญ และคณะ",
+        "class": "ปวช.1/1",
+        "category": "ชิ้นงานในชั้นเรียน",
+        "description": "ผลงานการออกแบบอัตลักษณ์แบรนด์ โลโก้ และโปสเตอร์ประชาสัมพันธ์ด้วยโปรแกรมกราฟิก ในรายวิชาการใช้เทคโนโลยีดิจิทัลเพื่ออาชีพ",
+        "imageUrl": "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=800&h=450",
+        "driveUrl": "https://drive.google.com",
+        "term": "1"
+      },
+      {
+        "id": "sw-t1-2",
+        "date": "28 สิงหาคม 2569",
+        "title": "การสร้างเว็บไซต์พอร์ตโฟลิโอส่วนบุคคล (Personal Portfolio Website)",
+        "studentName": "นางสาวกัญญาภัทร วงศ์สว่าง",
+        "class": "ปวช.1/2",
+        "category": "ชิ้นงานในชั้นเรียน",
+        "description": "การเขียนโค้ด HTML5 และ CSS3 พัฒนาเว็บไซต์ Responsive Portfolio เพื่อนำเสนอประวัติและผลงานการเรียน",
+        "imageUrl": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800&h=450",
+        "driveUrl": "https://drive.google.com",
+        "term": "1"
+      },
+      {
+        "id": "sw-t1-3",
+        "date": "12 กันยายน 2569",
+        "title": "อินโฟกราฟิกความปลอดภัยทางไซเบอร์ (Cyber Security Awareness)",
+        "studentName": "นายชยพล รัตนกุล",
+        "class": "ปวช.1/1",
+        "category": "สื่อมัลติมีเดีย",
+        "description": "การจัดทำสื่อ Infographic รณรงค์การใช้งานอินเทอร์เน็ตอย่างปลอดภัยและการป้องกันภัยคุกคามออนไลน์",
+        "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800&h=450",
+        "driveUrl": "https://drive.google.com",
+        "term": "1"
+      }
+    ],
+    "term2": [
+      {
+        "id": "sw-t2-1",
+        "date": "18 ธันวาคม 2569",
+        "title": "การออกแบบและพัฒนาระบบฐานข้อมูลร้านค้าออนไลน์",
+        "studentName": "นางสาวนภัสสร ใจมั่น และคณะ",
+        "class": "ปวช.1/1",
+        "category": "โครงงานนักศึกษา",
+        "description": "การวิเคราะห์โครงสร้างฐานข้อมูล (ER-Diagram) และสร้างตารางข้อมูล Relational Database ในรายวิชาระบบจัดการฐานข้อมูล",
+        "imageUrl": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&q=80&w=800&h=450",
+        "driveUrl": "https://drive.google.com",
+        "term": "2"
+      },
+      {
+        "id": "sw-t2-2",
+        "date": "22 มกราคม 2570",
+        "title": "หนังสืออิเล็กทรอนิกส์แบบปฏิสัมพันธ์ (Interactive E-Book)",
+        "studentName": "นายปิยะวัฒน์ ศรีสุข",
+        "class": "ปวช.1/2",
+        "category": "สื่อมัลติมีเดีย",
+        "description": "พัฒนาสื่อ E-Book สื่อมัลติมีเดีย เรื่องสถาปัตยกรรมคอมพิวเตอร์และระบบเลขฐาน พร้อมแบบทดสอบท้ายบทเรียน",
+        "imageUrl": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800&h=450",
+        "driveUrl": "https://drive.google.com",
+        "term": "2"
+      },
+      {
+        "id": "sw-t2-3",
+        "date": "15 กุมภาพันธ์ 2570",
+        "title": "นวัตกรรมแอปพลิเคชันจัดการขยะในสถานศึกษา",
+        "studentName": "ทีมพัฒนานวัตกรรมดิจิทัล ปวช.1",
+        "class": "ปวช.1",
+        "category": "การแข่งขันทักษะ",
+        "description": "ผลงานสิ่งประดิษฐ์และนวัตกรรมดิจิทัลของนักเรียน ได้รับรางวัลการประกวดสิ่งประดิษฐ์คนรุ่นใหม่ ระดับสถานศึกษา",
+        "imageUrl": "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=800&h=450",
+        "driveUrl": "https://drive.google.com",
+        "term": "2"
+      }
+    ]
+  },
   "teachingRecord": {
     "title": "บันทึกการฝึกสอน",
     "description": "บันทึกสรุปการปฏิบัติหน้าที่การสอนรายวัน รายสัปดาห์ และกิจกรรมที่ได้รับมอบหมาย",
