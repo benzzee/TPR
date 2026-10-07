@@ -3,7 +3,6 @@ import {
   GraduationCap, 
   Search, 
   RefreshCw, 
-  ExternalLink, 
   Calendar, 
   User, 
   Eye, 
@@ -19,7 +18,6 @@ import siteData from '../data/siteData.json';
 
 export function StudentWorks() {
   const { studentWorks } = siteData || {};
-  const [activeTerm, setActiveTerm] = useState('term1');
   const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด');
   const [searchQuery, setSearchQuery] = useState('');
   const [liveData, setLiveData] = useState(null); // null = not loaded / use JSON fallback
@@ -53,7 +51,7 @@ export function StudentWorks() {
 
   // --- Parse Raw CSV text into Student Work items ---
   // Expected Columns:
-  // 0: วันที่, 1: ชื่อผลงาน, 2: ชื่อนักเรียน/ผู้จัดทำ, 3: ชั้นเรียน, 4: หมวดหมู่, 5: รายละเอียด, 6: รูปภาพ(ID/URL), 7: ลิงก์ชิ้นงาน, 8: เทอม(1หรือ2)
+  // 0: วันที่, 1: ชื่อผลงาน, 2: ชื่อนักเรียน/ผู้จัดทำ, 3: ชั้นเรียน, 4: หมวดหมู่, 5: รายละเอียด, 6: รูปภาพ(ID/URL), 7: ลิงก์ชิ้นงาน
   const parseCSV = (text) => {
     const lines = text.trim().split(/\r?\n/);
     if (lines.length < 2) return [];
@@ -72,25 +70,27 @@ export function StudentWorks() {
           description: cols[5] || '',
           imageId: cols[6] || '',
           driveUrl: cols[7] || '',
-          term: cols[8] || '',
         };
       })
       .filter(r => r.title.trim() !== '' || r.studentName.trim() !== '');
   };
 
+  // Default sample image used for all cards as fallback
+  const DEFAULT_SAMPLE_IMAGE = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800&h=450";
+
   // Google Drive Helpers
   const isGoogleDriveId = (str) => str && !str.startsWith('http') && str.length > 10;
 
   const getImageSrc = (item) => {
-    if (!item) return null;
-    if (item.imageUrl) return item.imageUrl;
+    if (!item) return DEFAULT_SAMPLE_IMAGE;
+    if (item.imageUrl && item.imageUrl.startsWith('http')) return item.imageUrl;
     if (item.imageId) {
+      if (item.imageId.startsWith('http')) return item.imageId;
       if (isGoogleDriveId(item.imageId)) {
         return `https://drive.google.com/uc?export=view&id=${item.imageId}`;
       }
-      return item.imageId;
     }
-    return null;
+    return DEFAULT_SAMPLE_IMAGE;
   };
 
   const getDrivePreviewUrl = (id) => {
@@ -112,7 +112,15 @@ export function StudentWorks() {
     setIsDemoMode(false);
 
     try {
-      const res = await fetch(studentWorks.sheetUrl);
+      let url = studentWorks.sheetUrl.trim();
+      if (url.includes('/pubhtml')) {
+        url = url.replace('/pubhtml', '/pub');
+      }
+      if (!url.includes('output=csv')) {
+        url += (url.includes('?') ? '&' : '?') + 'output=csv';
+      }
+
+      const res = await fetch(url);
       if (!res.ok) throw new Error('ไม่สามารถโหลดข้อมูลจาก Google Sheet ได้');
       const text = await res.text();
       const parsed = parseCSV(text);
@@ -134,23 +142,25 @@ export function StudentWorks() {
 
   useEffect(() => {
     fetchStudentWorks();
-  }, [activeTerm]);
+  }, []);
 
-  // Determine active dataset (Google Sheet data or local siteData JSON)
-  const rawTermNum = activeTerm === 'term1' ? '1' : '2';
-  let termItems = [];
-
+  // Determine all items (Google Sheet data or combined local siteData JSON)
+  let allWorks = [];
   if (liveData && liveData.length > 0) {
-    termItems = liveData.filter(r => !r.term || r.term === '' || r.term === rawTermNum);
+    allWorks = liveData;
   } else {
-    termItems = studentWorks?.[activeTerm] || [];
+    allWorks = [
+      ...(studentWorks?.items || []),
+      ...(studentWorks?.term1 || []),
+      ...(studentWorks?.term2 || [])
+    ];
   }
 
   // Categories extraction
-  const allCategories = ['ทั้งหมด', ...new Set(termItems.map(i => i.category || 'ทั่วไป').filter(Boolean))];
+  const allCategories = ['ทั้งหมด', ...new Set(allWorks.map(i => i.category || 'ทั่วไป').filter(Boolean))];
 
   // Filtering
-  const filteredWorks = termItems.filter(item => {
+  const filteredWorks = allWorks.filter(item => {
     const matchesCategory = selectedCategory === 'ทั้งหมด' || item.category === selectedCategory;
     const q = searchQuery.toLowerCase();
     const matchesSearch = 
@@ -196,24 +206,9 @@ export function StudentWorks() {
         </div>
       )}
 
-      {/* Controls & Filter Bar */}
+      {/* Controls Bar with Search and Category Pills */}
       <div className="controls-bar glass-panel">
-        <div className="tabs-wrapper">
-          <button 
-            className={`tab-btn ${activeTerm === 'term1' ? 'active' : ''}`}
-            onClick={() => { setActiveTerm('term1'); setSelectedCategory('ทั้งหมด'); }}
-          >
-            ภาคเรียนที่ 1
-          </button>
-          <button 
-            className={`tab-btn ${activeTerm === 'term2' ? 'active' : ''}`}
-            onClick={() => { setActiveTerm('term2'); setSelectedCategory('ทั้งหมด'); }}
-          >
-            ภาคเรียนที่ 2
-          </button>
-        </div>
-
-        <div className="search-wrapper">
+        <div className="search-wrapper full-width">
           <Search size={18} className="search-icon" />
           <input 
             type="text" 
@@ -255,7 +250,7 @@ export function StudentWorks() {
         <div className="empty-state glass-panel">
           <FolderCheck size={48} className="text-muted" />
           <h3>ไม่พบข้อมูลผลงานนักเรียน</h3>
-          <p>ยังไม่มีรายการผลงานในภาคเรียนนี้ หรือคำค้นหาไม่ตรงกับรายการใด</p>
+          <p>ยังไม่มีรายการผลงานในระบบ หรือคำค้นหาไม่ตรงกับรายการใด</p>
         </div>
       ) : (
         <div className="student-works-grid">
@@ -265,7 +260,16 @@ export function StudentWorks() {
               <div key={item.id} className="work-card glass-panel">
                 <div className="work-image-container">
                   {imgSrc ? (
-                    <img src={imgSrc} alt={item.title} className="work-image" loading="lazy" />
+                    <img 
+                      src={imgSrc} 
+                      alt={item.title} 
+                      className="work-image" 
+                      loading="lazy" 
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = DEFAULT_SAMPLE_IMAGE;
+                      }}
+                    />
                   ) : (
                     <div className="work-image-placeholder">
                       <Sparkles size={36} className="placeholder-icon" />
@@ -314,19 +318,6 @@ export function StudentWorks() {
                       <Eye size={15} />
                       <span>ดูรายละเอียด</span>
                     </button>
-
-                    {item.driveUrl && (
-                      <a 
-                        href={item.driveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="btn-drive-link"
-                        title="เปิดดูไฟล์ต้นฉบับใน Google Drive"
-                      >
-                        <ExternalLink size={15} />
-                        <span>ชิ้นงาน</span>
-                      </a>
-                    )}
                   </div>
                 </div>
               </div>
@@ -351,7 +342,15 @@ export function StudentWorks() {
             <div className="modal-body">
               {getImageSrc(selectedWork) ? (
                 <div className="modal-image-wrapper">
-                  <img src={getImageSrc(selectedWork)} alt={selectedWork.title} className="modal-image" />
+                  <img 
+                    src={getImageSrc(selectedWork)} 
+                    alt={selectedWork.title} 
+                    className="modal-image" 
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = DEFAULT_SAMPLE_IMAGE;
+                    }}
+                  />
                 </div>
               ) : getDrivePreviewUrl(selectedWork.imageId) ? (
                 <div className="modal-iframe-wrapper">
@@ -401,20 +400,6 @@ export function StudentWorks() {
                   <div className="desc-section">
                     <h4>รายละเอียดผลงาน:</h4>
                     <p>{selectedWork.description}</p>
-                  </div>
-                )}
-
-                {selectedWork.driveUrl && (
-                  <div className="modal-actions">
-                    <a 
-                      href={selectedWork.driveUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="btn-primary-action"
-                    >
-                      <ExternalLink size={18} />
-                      <span>เปิดชิ้นงาน / Google Drive</span>
-                    </a>
                   </div>
                 )}
               </div>
@@ -483,17 +468,7 @@ export function StudentWorks() {
                   <tr>
                     <td>G (7)</td>
                     <td><code>รูปภาพ</code></td>
-                    <td>Google Drive File ID หรือ Image URL Direct Link</td>
-                  </tr>
-                  <tr>
-                    <td>H (8)</td>
-                    <td><code>ลิงก์ชิ้นงาน</code></td>
-                    <td>URL สำหรับเปิดดูชิ้นงานเต็ม หรือไฟล์ใน Google Drive</td>
-                  </tr>
-                  <tr>
-                    <td>I (9)</td>
-                    <td><code>เทอม</code></td>
-                    <td><code>1</code> (สำหรับเทอม 1) หรือ <code>2</code> (สำหรับเทอม 2)</td>
+                    <td>Google Drive File ID หรือ Image URL Direct Link (ระบุหรือไม่ระบูก็ได้)</td>
                   </tr>
                 </tbody>
               </table>
