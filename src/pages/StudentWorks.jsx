@@ -50,26 +50,40 @@ export function StudentWorks() {
   };
 
   // --- Parse Raw CSV text into Student Work items ---
-  // Expected Columns:
-  // 0: วันที่, 1: ชื่อผลงาน, 2: ชื่อนักเรียน/ผู้จัดทำ, 3: ชั้นเรียน, 4: หมวดหมู่, 5: รายละเอียด, 6: รูปภาพ(ID/URL), 7: ลิงก์ชิ้นงาน
   const parseCSV = (text) => {
     const lines = text.trim().split(/\r?\n/);
     if (lines.length < 2) return [];
 
-    const rows = lines.slice(1); // Skip header row
+    const headerCols = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase());
+    
+    // Find index of headers dynamically
+    const findIdx = (keywords) => {
+      return headerCols.findIndex(h => keywords.some(k => h.includes(k)));
+    };
+
+    const dateIdx = findIdx(['วัน', 'date']);
+    const titleIdx = findIdx(['ชื่อผลงาน', 'ชิ้นงาน', 'title']);
+    const studentIdx = findIdx(['นักเรียน', 'ผู้จัดทำ', 'ชื่อนักเรียน', 'student', 'author']);
+    const classIdx = findIdx(['ชั้น', 'ระดับ', 'class']);
+    const categoryIdx = findIdx(['หมวด', 'ประเภท', 'category']);
+    const descIdx = findIdx(['รายละเอียด', 'detail', 'desc']);
+    const imgIdx = findIdx(['รูป', 'ภาพ', 'image', 'img']);
+    const linkIdx = findIdx(['ลิงก์', 'link', 'url']);
+
+    const rows = lines.slice(1);
     return rows
       .map((line, idx) => {
         const cols = parseCSVLine(line);
         return {
           id: `sw-live-${idx}`,
-          date: cols[0] || '',
-          title: cols[1] || '',
-          studentName: cols[2] || '',
-          class: cols[3] || '',
-          category: cols[4] || 'ทั่วไป',
-          description: cols[5] || '',
-          imageId: cols[6] || '',
-          driveUrl: cols[7] || '',
+          date: (dateIdx !== -1 ? cols[dateIdx] : cols[0]) || '',
+          title: (titleIdx !== -1 ? cols[titleIdx] : cols[1]) || '',
+          studentName: (studentIdx !== -1 ? cols[studentIdx] : cols[2]) || '',
+          class: (classIdx !== -1 ? cols[classIdx] : cols[3]) || '',
+          category: (categoryIdx !== -1 ? cols[categoryIdx] : cols[4]) || 'ทั่วไป',
+          description: (descIdx !== -1 ? cols[descIdx] : cols[5]) || '',
+          imageId: (imgIdx !== -1 ? cols[imgIdx] : cols[6]) || '',
+          driveUrl: (linkIdx !== -1 ? cols[linkIdx] : cols[7]) || '',
         };
       })
       .filter(r => r.title.trim() !== '' || r.studentName.trim() !== '');
@@ -79,23 +93,71 @@ export function StudentWorks() {
   const DEFAULT_SAMPLE_IMAGE = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800&h=450";
 
   // Google Drive Helpers
-  const isGoogleDriveId = (str) => str && !str.startsWith('http') && str.length > 10;
+  const extractDriveId = (str) => {
+    if (!str) return null;
+    const s = str.trim();
+    if (s === '' || s === '-') return null;
+
+    // Check full URL containing /file/d/ID
+    const fileDMatch = s.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+    if (fileDMatch && fileDMatch[1]) return fileDMatch[1];
+
+    // Check parameter ?id=ID or &id=ID
+    const idParamMatch = s.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    if (idParamMatch && idParamMatch[1]) return idParamMatch[1];
+
+    // Check /d/ID
+    const dMatch = s.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    if (dMatch && dMatch[1]) return dMatch[1];
+
+    // Plain ID string (alphanumeric, dashes, underscores, len >= 15)
+    if (!s.startsWith('http') && s.length >= 15 && /^[a-zA-Z0-9_-]+$/.test(s)) {
+      return s;
+    }
+
+    return null;
+  };
+
+  const isGoogleDriveId = (str) => !!extractDriveId(str);
 
   const getImageSrc = (item) => {
     if (!item) return DEFAULT_SAMPLE_IMAGE;
-    if (item.imageUrl && item.imageUrl.startsWith('http')) return item.imageUrl;
-    if (item.imageId) {
-      if (item.imageId.startsWith('http')) return item.imageId;
-      if (isGoogleDriveId(item.imageId)) {
-        return `https://drive.google.com/uc?export=view&id=${item.imageId}`;
-      }
+
+    const raw = item.imageUrl || item.imageId || '';
+    if (!raw || raw === '-' || raw.trim() === '') return DEFAULT_SAMPLE_IMAGE;
+
+    const driveId = extractDriveId(raw);
+    if (driveId) {
+      // Use Google Drive Thumbnail API with sz=w1000 for high quality public drive image
+      return `https://drive.google.com/thumbnail?id=${driveId}&sz=w1000`;
     }
+
+    if (raw.startsWith('http://') || raw.startsWith('https://')) {
+      return raw;
+    }
+
     return DEFAULT_SAMPLE_IMAGE;
   };
 
+  const handleImageError = (e, item) => {
+    const raw = item?.imageUrl || item?.imageId || '';
+    const driveId = extractDriveId(raw);
+
+    // If thumbnail API failed, try lh3 CDN link
+    if (driveId && !e.target.dataset.triedLh3) {
+      e.target.dataset.triedLh3 = 'true';
+      e.target.src = `https://lh3.googleusercontent.com/d/${driveId}`;
+      return;
+    }
+
+    // Final fallback to default sample image
+    e.target.onerror = null;
+    e.target.src = DEFAULT_SAMPLE_IMAGE;
+  };
+
   const getDrivePreviewUrl = (id) => {
-    if (!id || id === '-' || id === '') return null;
-    if (isGoogleDriveId(id)) return `https://drive.google.com/file/d/${id}/preview`;
+    const driveId = extractDriveId(id);
+    if (driveId) return `https://drive.google.com/file/d/${driveId}/preview`;
     return null;
   };
 
@@ -119,8 +181,10 @@ export function StudentWorks() {
       if (!url.includes('output=csv')) {
         url += (url.includes('?') ? '&' : '?') + 'output=csv';
       }
+      // Add cache-busting timestamp so browser always fetches fresh data immediately
+      url += (url.includes('?') ? '&' : '?') + 't=' + Date.now();
 
-      const res = await fetch(url);
+      const res = await fetch(url, { cache: 'no-store' });
       if (!res.ok) throw new Error('ไม่สามารถโหลดข้อมูลจาก Google Sheet ได้');
       const text = await res.text();
       const parsed = parseCSV(text);
@@ -265,10 +329,8 @@ export function StudentWorks() {
                       alt={item.title} 
                       className="work-image" 
                       loading="lazy" 
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = DEFAULT_SAMPLE_IMAGE;
-                      }}
+                      referrerPolicy="no-referrer"
+                      onError={(e) => handleImageError(e, item)}
                     />
                   ) : (
                     <div className="work-image-placeholder">
@@ -346,10 +408,8 @@ export function StudentWorks() {
                     src={getImageSrc(selectedWork)} 
                     alt={selectedWork.title} 
                     className="modal-image" 
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = DEFAULT_SAMPLE_IMAGE;
-                    }}
+                    referrerPolicy="no-referrer"
+                    onError={(e) => handleImageError(e, selectedWork)}
                   />
                 </div>
               ) : getDrivePreviewUrl(selectedWork.imageId) ? (
