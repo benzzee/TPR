@@ -395,6 +395,24 @@
       }
     ]
   },
+  "evaluation": {
+    "title": "แบบการประเมินฝึกสอน",
+    "description": "แบบประเมินผลการปฏิบัติการสอนและฝึกประสบการณ์วิชาชีพครูในสถานศึกษา ตลอดภาคเรียน",
+    "term1": {
+      "semester": "ภาคเรียนที่ 1/2569",
+      "docTitle": "แบบประเมินผลการฝึกสอน เทอม 1",
+      "fileName": "แบบประเมินเทอมที่ 1.pdf",
+      "driveUrl": "https://drive.google.com/file/d/1pjz-nGP4nyhLJop4r4mdUhNHadDA-ZI9/view?usp=sharing",
+      "previewUrl": "https://drive.google.com/file/d/1pjz-nGP4nyhLJop4r4mdUhNHadDA-ZI9/preview"
+    },
+    "term2": {
+      "semester": "ภาคเรียนที่ 2/2569",
+      "docTitle": "แบบประเมินผลการฝึกสอน เทอม 2",
+      "fileName": "แบบประเมินเทอมที่ 2.pdf",
+      "driveUrl": "",
+      "previewUrl": ""
+    }
+  },
   "teachingRecord": {
     "title": "บันทึกการฝึกสอน",
     "description": "บันทึกสรุปการปฏิบัติหน้าที่การสอนรายวัน รายสัปดาห์ และกิจกรรมที่ได้รับมอบหมาย",

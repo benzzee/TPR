@@ -11,6 +11,7 @@ import { StudentWorks } from './pages/StudentWorks';
 import { Creators } from './pages/Creators';
 import { Record } from './pages/Record';
 import { Research } from './pages/Research';
+import { Evaluation } from './pages/Evaluation';
 import { Placeholder } from './pages/Placeholder';
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
           <Route path="activities" element={<Activities />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="student-works" element={<StudentWorks />} />
-          <Route path="evaluation" element={<Placeholder title="แบบการประเมินฝึกสอน" />} />
+          <Route path="evaluation" element={<Evaluation />} />
           <Route path="record" element={<Record />} />
           <Route path="research" element={<Research />} />
           <Route path="creators" element={<Creators />} />
